@@ -1,33 +1,4 @@
-﻿/*
- * aes.c - implementation of AES / Rijndael
- *
- * AES is a flexible algorithm as regards endianness: it has no
- * inherent preference as to which way round you should form words
- * from the input byte stream. It talks endlessly of four-byte
- * _vectors_, but never of 32-bit _words_ - there's no 32-bit
- * addition at all, which would force an endianness by means of
- * which way the carries went. So it would be possible to write a
- * working AES that read words big-endian, and another working one
- * that read them little-endian, just by computing a different set
- * of tables - with no speed drop.
- *
- * It's therefore tempting to do just that, and remove the overhead
- * of GET_32BIT_MSB_FIRST() et al, allowing every system to use its
- * own endianness-native code; but I decided not to, partly for
- * ease of testing, and mostly because I like the flexibility that
- * allows you to encrypt a non-word-aligned block of memory (which
- * many systems would stop being able to do if I went the
- * endianness-dependent route).
- *
- * This implementation reads and stores words big-endian, but
- * that's a minor implementation detail. By flipping the endianness
- * of everything in the E0..E3, D0..D3 tables, and substituting
- * GET_32BIT_LSB_FIRST for GET_32BIT_MSB_FIRST, I could create an
- * implementation that worked internally little-endian and gave the
- * same answers at the same speed.
- */
-
-#include <assert.h>
+﻿#include <assert.h>
 #include <stdlib.h>
 
 #include "cipher/ssh.h"

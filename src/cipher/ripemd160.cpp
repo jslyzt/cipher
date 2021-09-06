@@ -1,8 +1,4 @@
-﻿// Copyright (c) 2014-2017 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-#include "cipher/ripemd160.h"
+﻿#include "cipher/ripemd160.h"
 #include "cipher/common.h"
 
 #include <string.h>

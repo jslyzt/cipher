@@ -1,18 +1,4 @@
-﻿/*********************************************************************
-* Copyright (c) 2016 Pieter Wuille                                   *
-* Distributed under the MIT software license, see the accompanying   *
-* file COPYING or http://www.opensource.org/licenses/mit-license.php.*
-**********************************************************************/
-
-/* Constant time, unoptimized, concise, plain C, AES implementation
- * Based On:
- *   Emilia Kasper and Peter Schwabe, Faster and Timing-Attack Resistant AES-GCM
- *   http://www.iacr.org/archive/ches2009/57470001/57470001.pdf
- * But using 8 16-bit integers representing a single AES state rather than 8 128-bit
- * integers representing 8 AES states.
- */
-
-#include "cipher/ctaes/ctaes.h"
+﻿#include "cipher/ctaes/ctaes.h"
 
  /* Slice variable slice_i contains the i'th bit of the 16 state variables in this order:
   *  0  1  2  3

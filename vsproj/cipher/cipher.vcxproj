@@ -23,18 +23,6 @@
     <ClCompile Include="..\..\src\cipher\pbkdf2_hmac.c" />
     <ClCompile Include="..\..\src\cipher\rc4.c" />
     <ClCompile Include="..\..\src\cipher\ripemd160.cpp" />
-    <ClCompile Include="..\..\src\cipher\rsa\asn1.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\base64.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\bignum.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\common.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\libtommath.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\os_unix.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\rsa.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\test_rsa.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\trace.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\user_rsa.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\wpa_debug.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\wpabuf.c" />
     <ClCompile Include="..\..\src\cipher\sha.c" />
     <ClCompile Include="..\..\src\cipher\sha1.c" />
     <ClCompile Include="..\..\src\cipher\sha224.c" />
@@ -46,7 +34,7 @@
     <ClCompile Include="..\..\src\util\base64.cpp" />
     <ClCompile Include="..\..\src\util\stringutils.cpp" />
   </ItemGroup>
-  <ItemGroup><DataFilesToCopyRemotely Include="@(ClInclude)" /><DataFilesToCopyRemotely Include="@(ClInclude)" /></ItemGroup><PropertyGroup Label="Globals">
+  <ItemGroup><DataFilesToCopyRemotely Include="@(ClInclude)" /><DataFilesToCopyRemotely Include="@(ClInclude)" /><DataFilesToCopyRemotely Include="@(ClInclude)" /></ItemGroup><PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{6CD97FEB-2184-4A29-B5FA-6BA76F7051B4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

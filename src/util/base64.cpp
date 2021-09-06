@@ -1,12 +1,4 @@
-﻿/*
-** Copyright (C) 2014 Wang Yaofu
-** All rights reserved.
-**
-**Author:Wang Yaofu voipman@qq.com
-**Description: The source file of base64.
-*/
-
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <string.h>
 #include <assert.h>
 #include "base64.h"

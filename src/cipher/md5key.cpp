@@ -1,6 +1,4 @@
-﻿#define _MD5KEY_CPP
-
-#ifndef _REENTRANT
+﻿#ifndef _REENTRANT
 #define _REENTRANT    /* basic 3-lines for threads */
 #endif
 
