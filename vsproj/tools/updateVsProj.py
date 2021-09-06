@@ -212,14 +212,8 @@ def xmlIndent(elem, level=0):
 
 
 def getXmlInfo(xml):
-    class dummy:
-        pass
-
-    data = []
-    file = dummy()
-    file.write = data.append
-    xml.write(file, encoding='utf-8')
-    return '<?xml version="1.0" encoding="utf-8"?>\n' + str(data).replace('ns0:', '').replace(':ns0', '')
+    data = ElementTree.tostring(xml.getroot(), encoding='utf-8')
+    return '<?xml version="1.0" encoding="utf-8"?>\n' + bytes.decode(data).replace('ns0:', '').replace(':ns0', '')
 
 
 def saveXmlPrjNode(itemGroup, analysisInfo, key, cbKey, cbItem):
