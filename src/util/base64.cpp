@@ -137,7 +137,11 @@ bool Base64Encode(const std::string& input, char* output, size_t* len)
 	assert(output);
 
 	char* buff = output;
+#ifndef WIN32
 	if (__builtin_expect(*len < ExpectedEncodeLength(input.size()), 0)) {
+#else
+	if (*len >= ExpectedEncodeLength(input.size())) {
+#endif
 		return false;
 	}
 
@@ -178,7 +182,7 @@ bool Base64Encode(const std::string& input, char* output, size_t* len)
 	return true;
 }
 
-bool Base64Decode(const std::string& input, std::string* output)
+bool Base64Decode(const std::string & input, std::string * output)
 {
 	assert(output);
 	output->resize(ExpectedDecodeLength(input.size()));
@@ -194,15 +198,23 @@ bool Base64Decode(const std::string& input, std::string* output)
 	return true;
 }
 
-bool Base64Decode(const std::string& input, char* output, size_t* len)
+bool Base64Decode(const std::string & input, char* output, size_t * len)
 {
 	assert(output && len);
 
 	char* buff = output;
+#ifndef WIN32
 	if (__builtin_expect(*len < ExpectedDecodeLength(input.size()), 0)) {
+#else
+	if (*len >= ExpectedDecodeLength(input.size())) {
+#endif
 		return false;
 	}
+#ifndef WIN32
 	if (__builtin_expect(!DecodeTable, 0)) {
+#else
+	if (DecodeTable == NULL) {
+#endif
 		FillDecodeTable();
 	}
 	if (input.empty()) {
@@ -218,7 +230,11 @@ bool Base64Decode(const std::string& input, char* output, size_t* len)
 		char ch = 0;
 		unsigned char encoded[4];
 		int len = GetNext4EncodedCharacters(p, q, encoded);
+#ifndef WIN32
 		if (__builtin_expect(len == 4, 1)) {
+#else
+		if (len == 4) {
+#endif
 			ch = encoded[0] << 2; // all 6 bits
 			ch |= encoded[1] >> 4; // 2 high bits
 			*buff++ = ch;

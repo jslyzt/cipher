@@ -144,9 +144,9 @@ void TCONCAT(_Test_,base##name)::_Run()
 			TestPerfomence();
 			TestPerfomence(int size);
 			~TestPerfomence();
-			long NowMs();
+			long long NowMs();
 		private:
-			long startMs_;
+			long long startMs_;
 		};
 #define TEST_PERF(a,size) ::common::test::TestPerfomence a(size);
 	}  // namespace test

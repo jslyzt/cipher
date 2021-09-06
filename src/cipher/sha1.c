@@ -15,14 +15,14 @@
 #if defined(linux) || defined(__linux__)
 # include <endian.h>
 #else
-#define	LITTLE_ENDIAN	1234	/* least-significant byte first (vax, pc) */
-#define	BIG_ENDIAN	4321	/* most-significant byte first (IBM, net) */
-#define	PDP_ENDIAN	3412	/* LSB first in word, MSW first in long (pdp)*/
+#define LITTLE_ENDIAN 1234  /* least-significant byte first (vax, pc) */
+#define BIG_ENDIAN 4321     /* most-significant byte first (IBM, net) */
+#define PDP_ENDIAN 3412     /* LSB first in word, MSW first in long (pdp)*/
 
 #if defined(__i386__) || defined(__x86_64__) || defined(__amd64__) || \
    defined(vax) || defined(ns32000) || defined(sun386) || \
    defined(MIPSEL) || defined(_MIPSEL) || defined(BIT_ZERO_ON_RIGHT) || \
-   defined(__alpha__) || defined(__alpha)
+   defined(__alpha__) || defined(__alpha) || defined(WIN32)
 #define BYTE_ORDER    LITTLE_ENDIAN
 #endif
 
@@ -215,7 +215,7 @@ void SHA1Final(unsigned char digest[20], SHA1_CTX* context)
 
 		for (j = 0; j < 4; t >>= 8, j++)
 			*--fcp = (unsigned char)t;
-}
+	}
 #else
 	for (i = 0; i < 8; i++) {
 		finalcount[i] = (unsigned char)((context->count[(i >= 4 ? 0 : 1)]

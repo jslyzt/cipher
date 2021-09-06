@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <ItemGroup>
-    <ClCompile Include="..\..\src\base64.cpp" />
     <ClCompile Include="..\..\src\cipher\aes.c" />
     <ClCompile Include="..\..\src\cipher\aes\aes.cpp" />
     <ClCompile Include="..\..\src\cipher\chacha20.cpp" />
@@ -10,22 +9,9 @@
     <ClCompile Include="..\..\src\cipher\digest.c" />
     <ClCompile Include="..\..\src\cipher\hmac.c" />
     <ClCompile Include="..\..\src\cipher\md5.c" />
-    <ClCompile Include="..\..\src\cipher\md5key.cpp" />
     <ClCompile Include="..\..\src\cipher\pbkdf2_hmac.c" />
     <ClCompile Include="..\..\src\cipher\rc4.c" />
     <ClCompile Include="..\..\src\cipher\ripemd160.cpp" />
-    <ClCompile Include="..\..\src\cipher\rsa\asn1.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\base64.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\bignum.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\common.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\libtommath.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\os_unix.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\rsa.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\test_rsa.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\trace.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\user_rsa.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\wpa_debug.c" />
-    <ClCompile Include="..\..\src\cipher\rsa\wpabuf.c" />
     <ClCompile Include="..\..\src\cipher\sha.c" />
     <ClCompile Include="..\..\src\cipher\sha1.c" />
     <ClCompile Include="..\..\src\cipher\sha224.c" />
@@ -34,11 +20,7 @@
     <ClCompile Include="..\..\src\cipher\sha512.c" />
     <ClCompile Include="..\..\src\cipher\tdes.c" />
     <ClCompile Include="..\..\src\cipher\tea.c" />
-    <ClCompile Include="..\..\src\stringutils.cpp" />
-    <ClCompile Include="..\..\src\unittest\cipher_unittest.cpp" />
-    <ClCompile Include="..\..\src\unittest\test_harness.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\src\unittest\test_harness.h" />
+    <ClCompile Include="..\..\src\util\base64.cpp" />
+    <ClCompile Include="..\..\src\util\stringutils.cpp" />
   </ItemGroup>
 </Project>

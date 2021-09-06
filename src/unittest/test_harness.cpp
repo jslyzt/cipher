@@ -11,6 +11,7 @@
 #endif
 
 #include <vector>
+#include <chrono>
 
 namespace common {
 	namespace test {
@@ -78,15 +79,15 @@ namespace common {
 				size);
 		}
 		TestPerfomence::~TestPerfomence() {
-			long endMs = NowMs();
+			long long endMs = NowMs();
 			fprintf(stderr,
 				"\033[0;32m[ RUN      ] ==== start at %lu, stop at %lu, cost:[%lu]\n",
 				startMs_, endMs, endMs - startMs_);
 		}
-		long TestPerfomence::NowMs() {
-			struct timeval timeNow;
-			gettimeofday(&timeNow, NULL);
-			return (timeNow.tv_sec) * 1000 + timeNow.tv_usec / 1000;
+
+		long long TestPerfomence::NowMs() {
+			auto now = std::chrono::system_clock::now();
+			return std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
 		}
 
 	}
