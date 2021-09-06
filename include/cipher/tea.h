@@ -1,10 +1,9 @@
-
-#ifndef _SYS_TEA_H_
-#define _SYS_TEA_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
-#endif /* __cplusplus  */
+#endif
+
     /**
      * encrypt plain text to crypt text by TEA alg.
      * @param plain_text
@@ -34,7 +33,8 @@ extern "C" {
           int len,
           unsigned char iv[8],
           unsigned char key[16]);
+
+
 #ifdef __cplusplus
 }
-#endif /* __cplusplus  */
-#endif //_SYS_TEA_H_
+#endif

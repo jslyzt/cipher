@@ -1,14 +1,9 @@
-/* ================ sha1.h ================ */
-/*
-SHA-1 in C
-By Steve Reid <steve@edmweb.com>
-100% Public Domain
-*/
-#ifndef _SYS_SHA1_H_
-#define _SYS_SHA1_H_
+#pragma once
+
 #ifdef __cplusplus
 extern "C" {
-#endif /* __cplusplus  */
+#endif
+
     typedef struct {
         unsigned int state[5];
         unsigned int count[2];
@@ -22,7 +17,8 @@ extern "C" {
     // The function to calculate the message digest string
     // of a given string based on the SHA1 algrithm.
     void SHA1Calc(const unsigned char *input, unsigned int inlen, unsigned char *output);
+
+    
 #ifdef __cplusplus
 }
-#endif /* __cplusplus  */
-#endif /* _SYS_SHA1_H_ */
+#endif

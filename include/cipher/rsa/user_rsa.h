@@ -1,5 +1,4 @@
-#ifndef _USER_RSA_H
-#define _USER_RSA_H
+#pragma once
 
 #ifdef __cplusplus
 extern "C"{
@@ -14,6 +13,3 @@ extern "C"{
 #ifdef __cplusplus
 }
 #endif
-
-#endif
-

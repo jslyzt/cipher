@@ -1,11 +1,10 @@
-#ifndef _CIPHER_MD5KEY_H_
-#define _CIPHER_MD5KEY_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
-#endif /* __cplusplus  */
-int CalcPasswordLen(int inlen);
+#endif
 
+int CalcPasswordLen(int inlen);
 int MakePassword(char *output, char *input, int inlen, unsigned char *key, unsigned char *vector);
 int GetPassword(char *output, char *input, int inlen, unsigned char *key, unsigned char *vector);
 
@@ -28,7 +27,4 @@ LicenseKeyRet CheckLicenseKey(char *key, int keylen, char *product, char *versio
 
 #ifdef __cplusplus
 }
-#endif /* __cplusplus  */
-
-#endif // _CIPHER_MD5KEY_H_
-
+#endif

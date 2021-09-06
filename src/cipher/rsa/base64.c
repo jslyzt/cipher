@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Base64 encoding/decoding (RFC1341)
  * Copyright (c) 2005, Jouni Malinen <j@w1.fi>
  *
@@ -12,13 +12,13 @@
  * See README and COPYING for more details.
  */
 
-#include "includes.h"
+#include "cipher/rsa/includes.h"
 
-#include "os.h"
-#include "base64.h"
+#include "cipher/rsa/os.h"
+#include "cipher/rsa/base64.h"
 
 static const unsigned char base64_table[65] =
-	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
 /**
  * base64_encode - Base64 encode
@@ -32,11 +32,11 @@ static const unsigned char base64_table[65] =
  * nul terminated to make it easier to use as a C string. The nul terminator is
  * not included in out_len.
  */
-unsigned char * base64_encode(const unsigned char *src, size_t len,
-			      size_t *out_len)
+unsigned char* base64_encode(const unsigned char* src, size_t len,
+	size_t* out_len)
 {
-	unsigned char *out, *pos;
-	const unsigned char *end, *in;
+	unsigned char* out, * pos;
+	const unsigned char* end, * in;
 	size_t olen;
 	int line_len;
 
@@ -71,9 +71,10 @@ unsigned char * base64_encode(const unsigned char *src, size_t len,
 		if (end - in == 1) {
 			*pos++ = base64_table[(in[0] & 0x03) << 4];
 			*pos++ = '=';
-		} else {
+		}
+		else {
 			*pos++ = base64_table[((in[0] & 0x03) << 4) |
-					      (in[1] >> 4)];
+				(in[1] >> 4)];
 			*pos++ = base64_table[(in[1] & 0x0f) << 2];
 		}
 		*pos++ = '=';
@@ -100,15 +101,15 @@ unsigned char * base64_encode(const unsigned char *src, size_t len,
  *
  * Caller is responsible for freeing the returned buffer.
  */
-unsigned char * base64_decode(const unsigned char *src, size_t len,
-			      size_t *out_len)
+unsigned char* base64_decode(const unsigned char* src, size_t len,
+	size_t* out_len)
 {
-	unsigned char dtable[256], *out, *pos, in[4], block[4], tmp;
+	unsigned char dtable[256], * out, * pos, in[4], block[4], tmp;
 	size_t i, count, olen;
 
 	os_memset(dtable, 0x80, 256);
 	for (i = 0; i < sizeof(base64_table) - 1; i++)
-		dtable[base64_table[i]] = (unsigned char) i;
+		dtable[base64_table[i]] = (unsigned char)i;
 	dtable['='] = 0;
 
 	count = 0;

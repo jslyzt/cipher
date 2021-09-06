@@ -1,8 +1,9 @@
-#ifndef _CIPHER_PKCS5_PBKDF2_HMAC_H
-#define _CIPHER_PKCS5_PBKDF2_HMAC_H
+#pragma once
+
 #ifdef  __cplusplus
 extern "C" {
-#endif /* __cplusplus */
+#endif
+
     void PKCS5_PBKDF2_HMAC(const unsigned char *password, size_t plen,
         const unsigned char *salt, size_t slen,
         const unsigned long iteration_count, const unsigned long key_length,
@@ -15,7 +16,7 @@ extern "C" {
         const unsigned char *salt, size_t slen,
         const unsigned long iteration_count, const unsigned long key_length,
         unsigned char *output);
+        
 #ifdef  __cplusplus
 }
-#endif /* __cplusplus */
-#endif // _CIPHER_PKCS5_PBKDF2_HMAC_H
+#endif

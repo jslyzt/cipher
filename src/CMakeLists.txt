@@ -1,12 +1,13 @@
 file(GLOB
 	CIPHER_SRCS
-	*.c
+	
 	cipher/*.c
 	cipher/*/*.c
+	util/*.c
 
-	*.cpp
 	cipher/*.cpp
 	cipher/*/*.cpp
+	util/*.cpp
 )
 
 add_library(cipher ${CIPHER_SRCS})

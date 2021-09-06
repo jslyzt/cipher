@@ -1,19 +1,4 @@
-/*
- * ASN.1 DER parsing
- * Copyright (c) 2006, Jouni Malinen <j@w1.fi>
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation.
- *
- * Alternatively, this software may be distributed under the terms of BSD
- * license.
- *
- * See README and COPYING for more details.
- */
-
-#ifndef ASN1_H
-#define ASN1_H
+#pragma once
 
 #define ASN1_TAG_EOC		0x00 /* not used with DER */
 #define ASN1_TAG_BOOLEAN	0x01
@@ -69,4 +54,3 @@ int asn1_get_oid(const u8 *buf, size_t len, struct asn1_oid *oid,
 void asn1_oid_to_str(struct asn1_oid *oid, char *buf, size_t len);
 unsigned long asn1_bit_string_to_long(const u8 *buf, size_t len);
 
-#endif /* ASN1_H */

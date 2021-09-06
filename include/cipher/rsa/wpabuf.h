@@ -1,19 +1,4 @@
-/*
- * Dynamic data buffer
- * Copyright (c) 2007-2009, Jouni Malinen <j@w1.fi>
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation.
- *
- * Alternatively, this software may be distributed under the terms of BSD
- * license.
- *
- * See README and COPYING for more details.
- */
-
-#ifndef WPABUF_H
-#define WPABUF_H
+#pragma once
 
 /*
  * Internal data structure for wpabuf. Please do not touch this directly from
@@ -158,5 +143,3 @@ static inline void wpabuf_put_str(struct wpabuf *dst, const char *str)
 {
 	wpabuf_put_data(dst, str, os_strlen(str));
 }
-
-#endif /* WPABUF_H */

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * ASN.1 DER parsing
  * Copyright (c) 2006, Jouni Malinen <j@w1.fi>
  *
@@ -12,14 +12,14 @@
  * See README and COPYING for more details.
  */
 
-#include "includes.h"
+#include "cipher/rsa/includes.h"
 
-#include "common.h"
-#include "asn1.h"
+#include "cipher/common.h"
+#include "cipher/rsa/asn1.h"
 
-int asn1_get_next(const u8 *buf, size_t len, struct asn1_hdr *hdr)
+int asn1_get_next(const u8* buf, size_t len, struct asn1_hdr* hdr)
 {
-	const u8 *pos, *end;
+	const u8* pos, * end;
 	u8 tmp;
 
 	os_memset(hdr, 0, sizeof(*hdr));
@@ -35,22 +35,23 @@ int asn1_get_next(const u8 *buf, size_t len, struct asn1_hdr *hdr)
 		do {
 			if (pos >= end) {
 				wpa_printf(MSG_DEBUG, "ASN.1: Identifier "
-					   "underflow");
+					"underflow");
 				return -1;
 			}
 			tmp = *pos++;
 			wpa_printf(MSG_MSGDUMP, "ASN.1: Extended tag data: "
-				   "0x%02x", tmp);
+				"0x%02x", tmp);
 			hdr->tag = (hdr->tag << 7) | (tmp & 0x7f);
 		} while (tmp & 0x80);
-	} else
+	}
+	else
 		hdr->tag = hdr->identifier & 0x1f;
 
 	tmp = *pos++;
 	if (tmp & 0x80) {
 		if (tmp == 0xff) {
 			wpa_printf(MSG_DEBUG, "ASN.1: Reserved length "
-				   "value 0xff used");
+				"value 0xff used");
 			return -1;
 		}
 		tmp &= 0x7f; /* number of subsequent octets */
@@ -62,17 +63,18 @@ int asn1_get_next(const u8 *buf, size_t len, struct asn1_hdr *hdr)
 		while (tmp--) {
 			if (pos >= end) {
 				wpa_printf(MSG_DEBUG, "ASN.1: Length "
-					   "underflow");
+					"underflow");
 				return -1;
 			}
 			hdr->length = (hdr->length << 8) | *pos++;
 		}
-	} else {
+	}
+	else {
 		/* Short form - length 0..127 in one octet */
 		hdr->length = tmp;
 	}
 
-	if (end < pos || hdr->length > (unsigned int) (end - pos)) {
+	if (end < pos || hdr->length >(unsigned int) (end - pos)) {
 		wpa_printf(MSG_DEBUG, "ASN.1: Contents underflow");
 		return -1;
 	}
@@ -82,9 +84,9 @@ int asn1_get_next(const u8 *buf, size_t len, struct asn1_hdr *hdr)
 }
 
 
-int asn1_parse_oid(const u8 *buf, size_t len, struct asn1_oid *oid)
+int asn1_parse_oid(const u8* buf, size_t len, struct asn1_oid* oid)
 {
-	const u8 *pos, *end;
+	const u8* pos, * end;
 	unsigned long val;
 	u8 tmp;
 
@@ -118,7 +120,8 @@ int asn1_parse_oid(const u8 *buf, size_t len, struct asn1_oid *oid)
 				oid->oid[0] = 2;
 			oid->oid[1] = val - oid->oid[0] * 40;
 			oid->len = 2;
-		} else
+		}
+		else
 			oid->oid[oid->len++] = val;
 	}
 
@@ -126,8 +129,8 @@ int asn1_parse_oid(const u8 *buf, size_t len, struct asn1_oid *oid)
 }
 
 
-int asn1_get_oid(const u8 *buf, size_t len, struct asn1_oid *oid,
-		 const u8 **next)
+int asn1_get_oid(const u8* buf, size_t len, struct asn1_oid* oid,
+	const u8** next)
 {
 	struct asn1_hdr hdr;
 
@@ -136,7 +139,7 @@ int asn1_get_oid(const u8 *buf, size_t len, struct asn1_oid *oid,
 
 	if (hdr.class != ASN1_CLASS_UNIVERSAL || hdr.tag != ASN1_TAG_OID) {
 		wpa_printf(MSG_DEBUG, "ASN.1: Expected OID - found class %d "
-			   "tag 0x%x", hdr.class, hdr.tag);
+			"tag 0x%x", hdr.class, hdr.tag);
 		return -1;
 	}
 
@@ -146,9 +149,9 @@ int asn1_get_oid(const u8 *buf, size_t len, struct asn1_oid *oid,
 }
 
 
-void asn1_oid_to_str(struct asn1_oid *oid, char *buf, size_t len)
+void asn1_oid_to_str(struct asn1_oid* oid, char* buf, size_t len)
 {
-	char *pos = buf;
+	char* pos = buf;
 	size_t i;
 	int ret;
 
@@ -159,8 +162,8 @@ void asn1_oid_to_str(struct asn1_oid *oid, char *buf, size_t len)
 
 	for (i = 0; i < oid->len; i++) {
 		ret = os_snprintf(pos, buf + len - pos,
-				  "%s%lu",
-				  i == 0 ? "" : ".", oid->oid[i]);
+			"%s%lu",
+			i == 0 ? "" : ".", oid->oid[i]);
 		if (ret < 0 || ret >= buf + len - pos)
 			break;
 		pos += ret;
@@ -186,10 +189,10 @@ static u8 rotate_bits(u8 octet)
 }
 
 
-unsigned long asn1_bit_string_to_long(const u8 *buf, size_t len)
+unsigned long asn1_bit_string_to_long(const u8* buf, size_t len)
 {
 	unsigned long val = 0;
-	const u8 *pos = buf;
+	const u8* pos = buf;
 
 	/* BER requires that unused bits are zero, so we can ignore the number
 	 * of unused bits */
@@ -198,15 +201,15 @@ unsigned long asn1_bit_string_to_long(const u8 *buf, size_t len)
 	if (len >= 2)
 		val |= rotate_bits(*pos++);
 	if (len >= 3)
-		val |= ((unsigned long) rotate_bits(*pos++)) << 8;
+		val |= ((unsigned long)rotate_bits(*pos++)) << 8;
 	if (len >= 4)
-		val |= ((unsigned long) rotate_bits(*pos++)) << 16;
+		val |= ((unsigned long)rotate_bits(*pos++)) << 16;
 	if (len >= 5)
-		val |= ((unsigned long) rotate_bits(*pos++)) << 24;
+		val |= ((unsigned long)rotate_bits(*pos++)) << 24;
 	if (len >= 6)
 		wpa_printf(MSG_DEBUG, "X509: %s - some bits ignored "
-			   "(BIT STRING length %lu)",
-			   __func__, (unsigned long) len);
+			"(BIT STRING length %lu)",
+			__func__, (unsigned long)len);
 
 	return val;
 }

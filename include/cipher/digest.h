@@ -1,10 +1,8 @@
-#ifndef _CIPHER_DIGEST_H_
-#define _CIPHER_DIGEST_H_
+#pragma once
 
-/* from rfc2617 */
 #ifdef __cplusplus
 extern "C" {
-#endif /* __cplusplus  */
+#endif
 
 #define HASHLEN 16
 typedef unsigned char HASH[HASHLEN];
@@ -39,5 +37,4 @@ void DigestCalcResponse(
 
 #ifdef __cplusplus
 }
-#endif /* __cplusplus  */
-#endif /* _CIPHER_DIGEST_H_ */
+#endif

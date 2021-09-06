@@ -1,4 +1,4 @@
-/*
+﻿/*
  * wpa_supplicant/hostapd / common helper functions, etc.
  * Copyright (c) 2002-2007, Jouni Malinen <j@w1.fi>
  *
@@ -12,9 +12,9 @@
  * See README and COPYING for more details.
  */
 
-#include "includes.h"
+#include "cipher/rsa/includes.h"
 
-#include "common.h"
+#include "cipher/rsa/common.h"
 
 
 static int hex2num(char c)
@@ -29,7 +29,7 @@ static int hex2num(char c)
 }
 
 
-static int hex2byte(const char *hex)
+static int hex2byte(const char* hex)
 {
 	int a, b;
 	a = hex2num(*hex++);
@@ -48,7 +48,7 @@ static int hex2byte(const char *hex)
  * @addr: Buffer for the MAC address (ETH_ALEN = 6 bytes)
  * Returns: 0 on success, -1 on failure (e.g., string not a MAC address)
  */
-int hwaddr_aton(const char *txt, u8 *addr)
+int hwaddr_aton(const char* txt, u8* addr)
 {
 	int i;
 
@@ -78,12 +78,12 @@ int hwaddr_aton(const char *txt, u8 *addr)
  * this size
  * Returns: 0 on success, -1 on failure (invalid hex string)
  */
-int hexstr2bin(const char *hex, u8 *buf, size_t len)
+int hexstr2bin(const char* hex, u8* buf, size_t len)
 {
 	size_t i;
 	int a;
-	const char *ipos = hex;
-	u8 *opos = buf;
+	const char* ipos = hex;
+	u8* opos = buf;
 
 	for (i = 0; i < len; i++) {
 		a = hex2byte(ipos);
@@ -105,7 +105,7 @@ int hexstr2bin(const char *hex, u8 *buf, size_t len)
  * rolling over to more significant bytes if the byte was incremented from
  * 0xff to 0x00.
  */
-void inc_byte_array(u8 *counter, size_t len)
+void inc_byte_array(u8* counter, size_t len)
 {
 	int pos = len - 1;
 	while (pos >= 0) {
@@ -117,7 +117,7 @@ void inc_byte_array(u8 *counter, size_t len)
 }
 
 
-void wpa_get_ntp_timestamp(u8 *buf)
+void wpa_get_ntp_timestamp(u8* buf)
 {
 	struct os_time now;
 	u32 sec, usec;
@@ -130,23 +130,23 @@ void wpa_get_ntp_timestamp(u8 *buf)
 	usec = now.usec;
 	usec = 4295 * usec - (usec >> 5) - (usec >> 9);
 	tmp = host_to_be32(sec);
-	os_memcpy(buf, (u8 *) &tmp, 4);
+	os_memcpy(buf, (u8*)&tmp, 4);
 	tmp = host_to_be32(usec);
-	os_memcpy(buf + 4, (u8 *) &tmp, 4);
+	os_memcpy(buf + 4, (u8*)&tmp, 4);
 }
 
 
-static inline int _wpa_snprintf_hex(char *buf, size_t buf_size, const u8 *data,
-				    size_t len, int uppercase)
+static inline int _wpa_snprintf_hex(char* buf, size_t buf_size, const u8* data,
+	size_t len, int uppercase)
 {
 	size_t i;
-	char *pos = buf, *end = buf + buf_size;
+	char* pos = buf, * end = buf + buf_size;
 	int ret;
 	if (buf_size == 0)
 		return 0;
 	for (i = 0; i < len; i++) {
 		ret = os_snprintf(pos, end - pos, uppercase ? "%02X" : "%02x",
-				  data[i]);
+			data[i]);
 		if (ret < 0 || ret >= end - pos) {
 			end[-1] = '\0';
 			return pos - buf;
@@ -165,7 +165,7 @@ static inline int _wpa_snprintf_hex(char *buf, size_t buf_size, const u8 *data,
  * @len: Length of data in bytes
  * Returns: Number of bytes written
  */
-int wpa_snprintf_hex(char *buf, size_t buf_size, const u8 *data, size_t len)
+int wpa_snprintf_hex(char* buf, size_t buf_size, const u8* data, size_t len)
 {
 	return _wpa_snprintf_hex(buf, buf_size, data, len, 0);
 }
@@ -179,8 +179,8 @@ int wpa_snprintf_hex(char *buf, size_t buf_size, const u8 *data, size_t len)
  * @len: Length of data in bytes
  * Returns: Number of bytes written
  */
-int wpa_snprintf_hex_uppercase(char *buf, size_t buf_size, const u8 *data,
-			       size_t len)
+int wpa_snprintf_hex_uppercase(char* buf, size_t buf_size, const u8* data,
+	size_t len)
 {
 	return _wpa_snprintf_hex(buf, buf_size, data, len, 1);
 }
@@ -189,22 +189,22 @@ int wpa_snprintf_hex_uppercase(char *buf, size_t buf_size, const u8 *data,
 #ifdef CONFIG_ANSI_C_EXTRA
 
 #ifdef _WIN32_WCE
-void perror(const char *s)
+void perror(const char* s)
 {
 	wpa_printf(MSG_ERROR, "%s: GetLastError: %d",
-		   s, (int) GetLastError());
+		s, (int)GetLastError());
 }
 #endif /* _WIN32_WCE */
 
 
 int optind = 1;
 int optopt;
-char *optarg;
+char* optarg;
 
-int getopt(int argc, char *const argv[], const char *optstring)
+int getopt(int argc, char* const argv[], const char* optstring)
 {
 	static int optchr = 1;
-	char *cp;
+	char* cp;
 
 	if (optchr == 1) {
 		if (optind >= argc) {
@@ -240,14 +240,17 @@ int getopt(int argc, char *const argv[], const char *optstring)
 		if (argv[optind][optchr + 1]) {
 			/* No space between option and argument */
 			optarg = &argv[optind++][optchr + 1];
-		} else if (++optind >= argc) {
+		}
+		else if (++optind >= argc) {
 			/* option requires an argument */
 			return '?';
-		} else {
+		}
+		else {
 			/* Argument in the next argv */
 			optarg = argv[optind++];
 		}
-	} else {
+	}
+	else {
 		/* No argument */
 		if (argv[optind][++optchr] == '\0') {
 			optchr = 1;
@@ -269,21 +272,21 @@ int getopt(int argc, char *const argv[], const char *optstring)
  * buffer for output. If UNICODE is not set, the buffer is not
  * modified.
  */
-void wpa_unicode2ascii_inplace(TCHAR *str)
+void wpa_unicode2ascii_inplace(TCHAR* str)
 {
 #ifdef UNICODE
-	char *dst = (char *) str;
+	char* dst = (char*)str;
 	while (*str)
-		*dst++ = (char) *str++;
+		*dst++ = (char)*str++;
 	*dst = '\0';
 #endif /* UNICODE */
 }
 
 
-TCHAR * wpa_strdup_tchar(const char *str)
+TCHAR* wpa_strdup_tchar(const char* str)
 {
 #ifdef UNICODE
-	TCHAR *buf;
+	TCHAR* buf;
 	buf = os_malloc((strlen(str) + 1) * sizeof(TCHAR));
 	if (buf == NULL)
 		return NULL;
@@ -310,24 +313,24 @@ TCHAR * wpa_strdup_tchar(const char *str)
  * time, i.e., this is not re-entrant and the returned buffer must be used
  * before calling this again.
  */
-const char * wpa_ssid_txt(const u8 *ssid, size_t ssid_len)
+const char* wpa_ssid_txt(const u8* ssid, size_t ssid_len)
 {
 	static char ssid_txt[33];
-	char *pos;
+	char* pos;
 
 	if (ssid_len > 32)
 		ssid_len = 32;
 	os_memcpy(ssid_txt, ssid, ssid_len);
 	ssid_txt[ssid_len] = '\0';
 	for (pos = ssid_txt; *pos != '\0'; pos++) {
-		if ((u8) *pos < 32 || (u8) *pos >= 127)
+		if ((u8)*pos < 32 || (u8)*pos >= 127)
 			*pos = '_';
 	}
 	return ssid_txt;
 }
 
 
-void * __hide_aliasing_typecast(void *foo)
+void* __hide_aliasing_typecast(void* foo)
 {
 	return foo;
 }

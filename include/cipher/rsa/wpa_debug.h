@@ -1,19 +1,4 @@
-/*
- * wpa_supplicant/hostapd / Debug prints
- * Copyright (c) 2002-2007, Jouni Malinen <j@w1.fi>
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation.
- *
- * Alternatively, this software may be distributed under the terms of BSD
- * license.
- *
- * See README and COPYING for more details.
- */
-
-#ifndef WPA_DEBUG_H
-#define WPA_DEBUG_H
+#pragma once
 
 #include "wpabuf.h"
 
@@ -252,5 +237,3 @@ static inline void wpa_debug_close_syslog(void)
 #else
 #define WPA_ASSERT(a) do { } while (0)
 #endif
-
-#endif /* WPA_DEBUG_H */

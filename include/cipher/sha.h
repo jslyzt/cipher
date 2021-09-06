@@ -1,8 +1,10 @@
-#ifndef _CIPHER_SHASHA_H
-#define _CIPHER_SHASHA_H
+#pragma once
+
 #ifdef  __cplusplus
+
 extern "C" {
-#endif /* __cplusplus */
+#endif
+
     typedef unsigned int uint32;
     typedef uint32 word32;
     typedef struct {
@@ -15,7 +17,7 @@ extern "C" {
     void SHA_Bytes(SHA_State * s, const void *p, int len);
     void SHA_Final(SHA_State * s, unsigned char *output);
     void SHA_Simple(const void *p, int len, unsigned char *output);
+    
 #ifdef  __cplusplus
 }
-#endif /* __cplusplus */
-#endif /* _CIPHER_SHASHA_H */
+#endif

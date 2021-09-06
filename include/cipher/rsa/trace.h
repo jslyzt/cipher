@@ -1,19 +1,4 @@
-/*
- * Backtrace debugging
- * Copyright (c) 2009, Jouni Malinen <j@w1.fi>
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation.
- *
- * Alternatively, this software may be distributed under the terms of BSD
- * license.
- *
- * See README and COPYING for more details.
- */
-
-#ifndef TRACE_H
-#define TRACE_H
+#pragma once
 
 #define WPA_TRACE_LEN 16
 
@@ -70,5 +55,3 @@ void wpa_trace_dump_funcname(const char *title, void *pc);
 #define wpa_trace_dump_funcname(title, pc) do { } while (0)
 
 #endif /* WPA_TRACE_BFD */
-
-#endif /* TRACE_H */

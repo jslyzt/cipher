@@ -1,0 +1,5 @@
+/vsproj/.vs/
+/vsproj/*/*.user
+/vsproj/x64/
+/vsproj/cipher/x64/
+/vsproj/test/x64/

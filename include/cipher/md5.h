@@ -1,15 +1,8 @@
-/* taken from RFC-1321/Appendices A.1/A.2 */
+#pragma once
 
-/* PROTOTYPES should be set to one if and only if the compiler supports
-function argument prototyping.
-The following makes PROTOTYPES default to 0 if it has not already
-been defined with C compiler flags.
-*/
-#ifndef _SYS_MD5_H_
-#define _SYS_MD5_H_
 #ifdef __cplusplus
 extern "C" {
-#endif /* __cplusplus  */
+#endif
 
     typedef unsigned int UINT4;
     typedef unsigned char UCHAR;
@@ -79,5 +72,4 @@ extern "C" {
 
 #ifdef __cplusplus
 }
-#endif /* __cplusplus  */
-#endif /* _SYS_MD5_H_ */
+#endif

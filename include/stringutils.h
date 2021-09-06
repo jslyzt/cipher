@@ -1,11 +1,5 @@
-/*
-** Copyright (C) 2014 Wang Yaofu
-** All rights reserved.
-**
-**Author:Wang Yaofu voipman@qq.com
-**Description: The header file of class CStringUitls.
-*/
 #pragma once
+
 #include <string>
 #include <sstream>
 #include <vector>

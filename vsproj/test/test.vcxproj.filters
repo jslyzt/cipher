@@ -8,4 +8,8 @@
     <ClInclude Include="..\..\src\unittest\test_harness.h" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
   </Project>

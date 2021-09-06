@@ -1,14 +1,11 @@
-// Copyright (c) 2014-2017 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-#ifndef BITCOIN_CRYPTO_COMMON_H
-#define BITCOIN_CRYPTO_COMMON_H
+#pragma once
 
 #include <stdint.h>
 #include <string.h>
 
+#ifndef WIN32
 #include <endian.h>
+#endif
 
 uint16_t static inline ReadLE16(const unsigned char* ptr)
 {
@@ -95,5 +92,3 @@ uint64_t static inline CountBits(uint64_t x)
     }
     return ret;
 }
-
-#endif // BITCOIN_CRYPTO_COMMON_H

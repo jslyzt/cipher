@@ -1,11 +1,13 @@
-#ifndef _CIPHER_SSHSSH_H_
-#define _CIPHER_SSHSSH_H_
+#pragma once
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 #ifdef __cplusplus
 extern "C" {
-#endif /* __cplusplus  */
+#endif
+
     struct ssh_mac {
         void *(*make_context)(void);
         void (*free_context)(void *);
@@ -51,7 +53,7 @@ extern "C" {
     extern const struct ssh_mac ssh_hmac_sha1_96_buggy;
     extern const struct ssh_mac ssh_hmac_sha256;
 
+
 #ifdef __cplusplus
 }
-#endif /* __cplusplus  */
-#endif /* _CIPHER_SSHSSH_H_ */
+#endif

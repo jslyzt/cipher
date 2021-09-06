@@ -1,5 +1,5 @@
 {
-	"dir": ["../../src", "../../src/cipher"],
+	"dir": ["../../src/util", "../../src/cipher"],
 	"filter": {
 		"unfold": true,
 		"skip": 4

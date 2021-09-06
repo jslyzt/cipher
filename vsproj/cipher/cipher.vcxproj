@@ -11,7 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\base64.cpp" />
     <ClCompile Include="..\..\src\cipher\aes.c" />
     <ClCompile Include="..\..\src\cipher\aes\aes.cpp" />
     <ClCompile Include="..\..\src\cipher\chacha20.cpp" />
@@ -44,14 +43,10 @@
     <ClCompile Include="..\..\src\cipher\sha512.c" />
     <ClCompile Include="..\..\src\cipher\tdes.c" />
     <ClCompile Include="..\..\src\cipher\tea.c" />
-    <ClCompile Include="..\..\src\stringutils.cpp" />
-    <ClCompile Include="..\..\src\unittest\cipher_unittest.cpp" />
-    <ClCompile Include="..\..\src\unittest\test_harness.cpp" />
+    <ClCompile Include="..\..\src\util\base64.cpp" />
+    <ClCompile Include="..\..\src\util\stringutils.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\src\unittest\test_harness.h" />
-  <DataFilesToCopyRemotely Include="@(ClInclude)" /></ItemGroup>
-  <PropertyGroup Label="Globals">
+  <ItemGroup><DataFilesToCopyRemotely Include="@(ClInclude)" /><DataFilesToCopyRemotely Include="@(ClInclude)" /></ItemGroup><PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{6CD97FEB-2184-4A29-B5FA-6BA76F7051B4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -97,10 +92,10 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_LIB;SHORT_FILENAME;BUILDING_LIBCURL;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WIN32;CONFIG_INTERNAL_LIBTOMMATH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\deps\include\boringssl;$(SolutionDir)\..\deps\include;$(SolutionDir)\..\deps\include\libevent;$(SolutionDir)\..\deps\include\breakpad;$(SolutionDir)\..\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -115,10 +110,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_LIB;SHORT_FILENAME;BUILDING_LIBCURL;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;WIN32;CONFIG_INTERNAL_LIBTOMMATH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\deps\include\boringssl;$(SolutionDir)\..\deps\include;$(SolutionDir)\..\deps\include\libevent;$(SolutionDir)\..\deps\include\breakpad;$(SolutionDir)\..\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>

@@ -1,8 +1,9 @@
-#ifndef _CIPHER_SHA256_H
-#define _CIPHER_SHA256_H
+#pragma once
+
 #ifdef  __cplusplus
 extern "C" {
-#endif /* __cplusplus */
+#endif
+
     typedef unsigned int uint32;
     typedef struct {
         uint32 h[8];
@@ -16,7 +17,8 @@ extern "C" {
     void SHA256_Simple(const void *p, int len, unsigned char *output);
     void sha256_do_hmac(unsigned char* key, int keylen,
         unsigned char *blk, int len, unsigned char *hmac);
+
+        
 #ifdef  __cplusplus
 }
-#endif /* __cplusplus */
-#endif /* _CIPHER_SHA256_H */
+#endif

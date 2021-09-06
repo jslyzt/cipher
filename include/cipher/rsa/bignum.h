@@ -1,19 +1,4 @@
-/*
- * Big number math
- * Copyright (c) 2006, Jouni Malinen <j@w1.fi>
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation.
- *
- * Alternatively, this software may be distributed under the terms of BSD
- * license.
- *
- * See README and COPYING for more details.
- */
-
-#ifndef BIGNUM_H
-#define BIGNUM_H
+#pragma once
 
 struct bignum;
 
@@ -34,5 +19,3 @@ int bignum_mulmod(const struct bignum *a, const struct bignum *b,
 		  const struct bignum *c, struct bignum *d);
 int bignum_exptmod(const struct bignum *a, const struct bignum *b,
 		   const struct bignum *c, struct bignum *d);
-
-#endif /* BIGNUM_H */
