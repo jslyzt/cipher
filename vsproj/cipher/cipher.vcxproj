@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\lib\config\config.cpp" />
+    <ClCompile Include="..\..\src\lib\dump\dump_linux.cpp" />
+    <ClCompile Include="..\..\src\lib\dump\dump_mac.cpp" />
+    <ClCompile Include="..\..\src\lib\dump\dump_win.cpp" />
+    <ClCompile Include="..\..\src\lib\evhpp\evhpp_service.cc" />
+    <ClCompile Include="..\..\src\lib\evhpp\http_parser_cpp.cc" />
+    <ClCompile Include="..\..\src\lib\evhpp\http_request.cc" />
+    <ClCompile Include="..\..\src\lib\evhpp\http_response.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\buff\ringbuffer.cpp" />
+    <ClCompile Include="..\..\src\lib\evpp\buff\syncbuffer.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\const.cpp" />
+    <ClCompile Include="..\..\src\lib\evpp\http\client\conn.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\http\client\conn_pool.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\http\client\request.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\http\client\response.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\http\client\url_parser.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\http\server\context.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\http\server\http_server.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\http\server\http_service.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\inner_pre.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\io\udp_io.cpp" />
+    <ClCompile Include="..\..\src\lib\evpp\libevent.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\loop\event_loop.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\loop\event_loop_thread.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\loop\event_loop_thread_pool.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\loop\event_watcher.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\loop\invoke_timer.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\multi\multi_listener.cpp" />
+    <ClCompile Include="..\..\src\lib\evpp\tcp\client\connector.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\tcp\client\dns_resolver.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\tcp\client\tcp_client.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\tcp\fd_channel.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\tcp\server\listener.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\tcp\server\tcp_easy_server.cpp" />
+    <ClCompile Include="..\..\src\lib\evpp\tcp\server\tcp_server.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\tcp\sockets.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\tcp\tcp_conn.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\thdenv.cpp" />
+    <ClCompile Include="..\..\src\lib\evpp\time\duration.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\time\gettimeofday.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\udp\udp_client.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\udp\udp_server.cc" />
+    <ClCompile Include="..\..\src\lib\evpp\udp\udp_tick.cc" />
+    <ClCompile Include="..\..\src\lib\fifo\fifo_linux.cpp" />
+    <ClCompile Include="..\..\src\lib\fifo\fifo_win.cpp" />
+    <ClCompile Include="..\..\src\lib\flags\flags.cpp" />
+    <ClCompile Include="..\..\src\lib\log\log.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\contrl\contrlCon.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\contrl\contrlDeal.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\contrl\contrlServer.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\contrl\contrlUtil.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\contrl\pbdeal\msgHeader.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\contrl\pbdeal\pbSend.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\contrl\pbdeal\pbSerialize.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\def_value.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\echo\echoCon.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\echo\echoDeal.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\echo\echoDealUser.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\echo\echoServer.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\echo\echoUtil.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\acl\aclfilter.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\acl\aclgeoip.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\acl\aclmgr.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\algorithm\aes_bssl.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\algorithm\cc20_bssl.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\algorithm\crc32_sse42.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\algorithm\crc32_zlib.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\algorithm\rc4_bssl.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\arq\arq.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\arq\arq_line.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\arq\arq_pool.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\deal\trans_acl.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\deal\trans_deal.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\io\trans_bypass.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\io\trans_group.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\kcp\ikcp.c" />
+    <ClCompile Include="..\..\src\lib\logic\trans\msg\trans_binary.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\msg\trans_head.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\msg\trans_msg.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\ports\trans_port.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\trans_server.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\trans_server_fun.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\user\allow_user.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\user\con_io.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\user\con_jump.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\user\con_jump_clt.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\user\con_pipe.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\user\con_primitive.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\user\con_trans.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\user\jump_user.cpp" />
+    <ClCompile Include="..\..\src\lib\logic\trans\user\trans_func.cpp" />
+    <ClCompile Include="..\..\src\lib\pb\booster.pb.cc" />
+    <ClCompile Include="..\..\src\lib\pb\client.pb.cc" />
+    <ClCompile Include="..\..\src\lib\pb\define.pb.cc" />
+    <ClCompile Include="..\..\src\lib\pb\msgid.pb.cc" />
+    <ClCompile Include="..\..\src\lib\pb\pbRegist.cpp" />
+    <ClCompile Include="..\..\src\lib\stat\stat.cpp" />
+    <ClCompile Include="..\..\src\lib\thd\thd.cpp" />
+    <ClCompile Include="..\..\src\lib\tun\ip_checksum.cpp" />
+    <ClCompile Include="..\..\src\lib\tun\tun.cpp" />
+    <ClCompile Include="..\..\src\lib\tun\tun_func.cpp" />
+    <ClCompile Include="..\..\src\lib\tun\tun_io.cpp" />
+    <ClCompile Include="..\..\src\lib\tun\tun_ios.cpp" />
+    <ClCompile Include="..\..\src\lib\tun\tun_linux.cpp" />
+    <ClCompile Include="..\..\src\lib\tun\tun_win.cpp" />
+    <ClCompile Include="..\..\src\lib\util\exception.cpp" />
+    <ClCompile Include="..\..\src\lib\util\time_use.cpp" />
+    <ClCompile Include="..\..\src\lib\util\util_curl.cpp" />
+    <ClCompile Include="..\..\src\lib\util\util_func.cpp" />
+    <ClCompile Include="..\..\src\lib\util\util_func_linux.cpp" />
+    <ClCompile Include="..\..\src\lib\util\util_func_win.cpp" />
+    <ClCompile Include="..\..\src\lib\util\util_uuid.cpp" />
+    <ClCompile Include="..\..\src\lib\util\util_wheel.cpp" />
+    <ClCompile Include="..\..\src\lib\version\version.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\lib\config\config.h" />
+    <ClInclude Include="..\..\src\lib\config\config_toml.h" />
+    <ClInclude Include="..\..\src\lib\dump\dump.h" />
+    <ClInclude Include="..\..\src\lib\evhpp\evhpp_service.h" />
+    <ClInclude Include="..\..\src\lib\evhpp\http_parser.h" />
+    <ClInclude Include="..\..\src\lib\evhpp\http_request.h" />
+    <ClInclude Include="..\..\src\lib\evhpp\http_response.h" />
+    <ClInclude Include="..\..\src\lib\evpp\any.h" />
+    <ClInclude Include="..\..\src\lib\evpp\buff\bufferdef.h" />
+    <ClInclude Include="..\..\src\lib\evpp\buff\ringbuffer.h" />
+    <ClInclude Include="..\..\src\lib\evpp\buff\syncbuffer.h" />
+    <ClInclude Include="..\..\src\lib\evpp\buffer.h" />
+    <ClInclude Include="..\..\src\lib\evpp\const.h" />
+    <ClInclude Include="..\..\src\lib\evpp\error_code.h" />
+    <ClInclude Include="..\..\src\lib\evpp\http\client\conn.h" />
+    <ClInclude Include="..\..\src\lib\evpp\http\client\conn_pool.h" />
+    <ClInclude Include="..\..\src\lib\evpp\http\client\request.h" />
+    <ClInclude Include="..\..\src\lib\evpp\http\client\response.h" />
+    <ClInclude Include="..\..\src\lib\evpp\http\client\url_parser.h" />
+    <ClInclude Include="..\..\src\lib\evpp\http\server\context.h" />
+    <ClInclude Include="..\..\src\lib\evpp\http\server\http_server.h" />
+    <ClInclude Include="..\..\src\lib\evpp\http\server\http_service.h" />
+    <ClInclude Include="..\..\src\lib\evpp\http\server\stats.h" />
+    <ClInclude Include="..\..\src\lib\evpp\inner_pre.h" />
+    <ClInclude Include="..\..\src\lib\evpp\io\io_def.h" />
+    <ClInclude Include="..\..\src\lib\evpp\io\tcp_io.h" />
+    <ClInclude Include="..\..\src\lib\evpp\io\udp_io.h" />
+    <ClInclude Include="..\..\src\lib\evpp\libevent.h" />
+    <ClInclude Include="..\..\src\lib\evpp\logging.h" />
+    <ClInclude Include="..\..\src\lib\evpp\loop\event_loop.h" />
+    <ClInclude Include="..\..\src\lib\evpp\loop\event_loop_thread.h" />
+    <ClInclude Include="..\..\src\lib\evpp\loop\event_loop_thread_pool.h" />
+    <ClInclude Include="..\..\src\lib\evpp\loop\event_watcher.h" />
+    <ClInclude Include="..\..\src\lib\evpp\loop\invoke_timer.h" />
+    <ClInclude Include="..\..\src\lib\evpp\memmem.h" />
+    <ClInclude Include="..\..\src\lib\evpp\multi\multi_listener.h" />
+    <ClInclude Include="..\..\src\lib\evpp\platform_config.h" />
+    <ClInclude Include="..\..\src\lib\evpp\server_status.h" />
+    <ClInclude Include="..\..\src\lib\evpp\slice.h" />
+    <ClInclude Include="..\..\src\lib\evpp\sys_addrinfo.h" />
+    <ClInclude Include="..\..\src\lib\evpp\sys_sockets.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\client\connector.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\client\dns_resolver.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\client\tcp_client.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\fd_channel.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\server\listener.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\server\tcp_easy_server.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\server\tcp_server.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\sockets.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\tcp_callbacks.h" />
+    <ClInclude Include="..\..\src\lib\evpp\tcp\tcp_conn.h" />
+    <ClInclude Include="..\..\src\lib\evpp\thdenv.h" />
+    <ClInclude Include="..\..\src\lib\evpp\thread_dispatch_policy.h" />
+    <ClInclude Include="..\..\src\lib\evpp\time\duration.h" />
+    <ClInclude Include="..\..\src\lib\evpp\time\duration.inl.h" />
+    <ClInclude Include="..\..\src\lib\evpp\time\gettimeofday.h" />
+    <ClInclude Include="..\..\src\lib\evpp\time\timestamp.h" />
+    <ClInclude Include="..\..\src\lib\evpp\time\timestamp.inl.h" />
+    <ClInclude Include="..\..\src\lib\evpp\udp\udp_client.h" />
+    <ClInclude Include="..\..\src\lib\evpp\udp\udp_message.h" />
+    <ClInclude Include="..\..\src\lib\evpp\udp\udp_server.h" />
+    <ClInclude Include="..\..\src\lib\evpp\udp\udp_tick.h" />
+    <ClInclude Include="..\..\src\lib\evpp\utility.h" />
+    <ClInclude Include="..\..\src\lib\evpp\windows_port.h" />
+    <ClInclude Include="..\..\src\lib\fifo\fifo.h" />
+    <ClInclude Include="..\..\src\lib\fifo\fifo_linux.h" />
+    <ClInclude Include="..\..\src\lib\fifo\fifo_win.h" />
+    <ClInclude Include="..\..\src\lib\flags\flags.h" />
+    <ClInclude Include="..\..\src\lib\log\log.h" />
+    <ClInclude Include="..\..\src\lib\log\log_def.h" />
+    <ClInclude Include="..\..\src\lib\log\log_ext.h" />
+    <ClInclude Include="..\..\src\lib\logic\contrl\contrlCon.h" />
+    <ClInclude Include="..\..\src\lib\logic\contrl\contrlServer.h" />
+    <ClInclude Include="..\..\src\lib\logic\contrl\contrlUtil.h" />
+    <ClInclude Include="..\..\src\lib\logic\contrl\pbdeal\msgHeader.h" />
+    <ClInclude Include="..\..\src\lib\logic\contrl\pbdeal\pbRegist.h" />
+    <ClInclude Include="..\..\src\lib\logic\contrl\pbdeal\pbSend.h" />
+    <ClInclude Include="..\..\src\lib\logic\contrl\pbdeal\pbSerialize.h" />
+    <ClInclude Include="..\..\src\lib\logic\contrl\pbdeal\pbdeal.h" />
+    <ClInclude Include="..\..\src\lib\logic\def_value.h" />
+    <ClInclude Include="..\..\src\lib\logic\echo\echoCon.h" />
+    <ClInclude Include="..\..\src\lib\logic\echo\echoDeal.h" />
+    <ClInclude Include="..\..\src\lib\logic\echo\echoServer.h" />
+    <ClInclude Include="..\..\src\lib\logic\echo\echoUtil.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\acl\aclfilter.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\acl\aclgeoip.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\acl\aclmgr.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\algorithm\algorithm.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\arq\arq.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\arq\arq_line.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\arq\arq_pool.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\deal\trans_acl.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\deal\trans_deal.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\io\trans_bypass.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\io\trans_group.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\io\trans_io.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\io\trans_tcp.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\io\trans_udp.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\kcp\ikcp.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\msg\trans_binary.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\msg\trans_head.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\msg\trans_msg.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\ports\trans_port.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\trans_server.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\trans_server_fun.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\user\allow_user.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\user\con_io.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\user\con_jump.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\user\con_jump_clt.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\user\con_pipe.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\user\con_primitive.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\user\con_trans.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\user\jump_user.h" />
+    <ClInclude Include="..\..\src\lib\logic\trans\user\trans_func.h" />
+    <ClInclude Include="..\..\src\lib\pb\booster.pb.h" />
+    <ClInclude Include="..\..\src\lib\pb\client.pb.h" />
+    <ClInclude Include="..\..\src\lib\pb\define.pb.h" />
+    <ClInclude Include="..\..\src\lib\pb\msgid.pb.h" />
+    <ClInclude Include="..\..\src\lib\stat\stat.h" />
+    <ClInclude Include="..\..\src\lib\thd\thd.h" />
+    <ClInclude Include="..\..\src\lib\tun\ip_checksum.h" />
+    <ClInclude Include="..\..\src\lib\tun\tun.h" />
+    <ClInclude Include="..\..\src\lib\tun\tun_func.h" />
+    <ClInclude Include="..\..\src\lib\tun\tun_io.h" />
+    <ClInclude Include="..\..\src\lib\util\concurrentqueue.h" />
+    <ClInclude Include="..\..\src\lib\util\default.h" />
+    <ClInclude Include="..\..\src\lib\util\exception.h" />
+    <ClInclude Include="..\..\src\lib\util\singleton.h" />
+    <ClInclude Include="..\..\src\lib\util\thread.h" />
+    <ClInclude Include="..\..\src\lib\util\time_use.h" />
+    <ClInclude Include="..\..\src\lib\util\util.h" />
+    <ClInclude Include="..\..\src\lib\util\util_func.h" />
+    <ClInclude Include="..\..\src\lib\util\util_map.h" />
+    <ClInclude Include="..\..\src\lib\util\util_mark.h" />
+    <ClInclude Include="..\..\src\lib\util\util_number.h" />
+    <ClInclude Include="..\..\src\lib\util\util_queue.h" />
+    <ClInclude Include="..\..\src\lib\util\util_tally.h" />
+    <ClInclude Include="..\..\src\lib\util\util_topn.h" />
+    <ClInclude Include="..\..\src\lib\util\util_wheel.h" />
+    <ClInclude Include="..\..\src\lib\version\version.h" />
+  <DataFilesToCopyRemotely Include="@(ClInclude)" /></ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{6CD97FEB-2184-4A29-B5FA-6BA76F7051B4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>cipher</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>lbooster</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>lbooster</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;SHORT_FILENAME;BUILDING_LIBCURL;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\deps\include\boringssl;$(SolutionDir)\..\deps\include;$(SolutionDir)\..\deps\include\libevent;$(SolutionDir)\..\deps\include\breakpad;$(SolutionDir)\..\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;SHORT_FILENAME;BUILDING_LIBCURL;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\deps\include\boringssl;$(SolutionDir)\..\deps\include;$(SolutionDir)\..\deps\include\libevent;$(SolutionDir)\..\deps\include\breakpad;$(SolutionDir)\..\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

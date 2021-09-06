@@ -1,0 +1,7 @@
+{
+	"dir": ["../../src/unittest"],
+	"filter": {
+		"unfold": true,
+		"skip": 4
+	}
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <ClCompile Include="..\..\src\test\flag_proxy.cpp" />
+    <ClCompile Include="..\..\src\test\main.cpp" />
+    <ClCompile Include="..\..\src\test\test_acl.cpp" />
+    <ClCompile Include="..\..\src\test\test_algorithm.cpp" />
+    <ClCompile Include="..\..\src\test\test_bitset.cpp" />
+    <ClCompile Include="..\..\src\test\test_buffer.cpp" />
+    <ClCompile Include="..\..\src\test\test_config.cpp" />
+    <ClCompile Include="..\..\src\test\test_evpp.cpp" />
+    <ClCompile Include="..\..\src\test\test_evt_tcp_proxy.cpp" />
+    <ClCompile Include="..\..\src\test\test_fifo.cpp" />
+    <ClCompile Include="..\..\src\test\test_flags.cpp" />
+    <ClCompile Include="..\..\src\test\test_geoip.cpp" />
+    <ClCompile Include="..\..\src\test\test_http_clt.cpp" />
+    <ClCompile Include="..\..\src\test\test_http_proxy.cpp" />
+    <ClCompile Include="..\..\src\test\test_https_clt.cpp" />
+    <ClCompile Include="..\..\src\test\test_kcp.cpp" />
+    <ClCompile Include="..\..\src\test\test_kcp_util.cpp" />
+    <ClCompile Include="..\..\src\test\test_log.cpp" />
+    <ClCompile Include="..\..\src\test\test_pkg.cpp" />
+    <ClCompile Include="..\..\src\test\test_tcp_proxy.cpp" />
+    <ClCompile Include="..\..\src\test\test_time_wheel.cpp" />
+    <ClCompile Include="..\..\src\test\test_tun.cpp" />
+    <ClCompile Include="..\..\src\test\test_udp_c.cpp" />
+    <ClCompile Include="..\..\src\test\test_udp_proxy.cpp" />
+    <ClCompile Include="..\..\src\test\test_util.cpp" />
+    <ClCompile Include="..\..\src\test\test_version.cpp" />
+    <ClCompile Include="..\..\src\test\work_thread.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ClInclude Include="..\..\src\test\flag_proxy.h" />
+    <ClInclude Include="..\..\src\test\test_kcp_util.h" />
+    <ClInclude Include="..\..\src\test\work_thread.h" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  </Project>
