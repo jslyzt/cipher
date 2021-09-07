@@ -98,6 +98,5 @@
   </ImportGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\unittest\test_harness.h" />
-    <DataFilesToCopyRemotely Include="@(ClInclude)" />
-  </ItemGroup>
-</Project>
+  <DataFilesToCopyRemotely Include="@(ClInclude)" /></ItemGroup>
+  </Project>

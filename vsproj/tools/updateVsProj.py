@@ -1,5 +1,5 @@
 # coding=utf-8
-import getopt, sys, re, os, json, types, hashlib
+import getopt, sys, re, os, json, hashlib
 from xml.etree import ElementTree
 
 # -------------------------------------------------------------------------------
@@ -349,9 +349,7 @@ def saveOutFile_filter(basePath, outDir, project, analysisInfo, excludeCfg, filt
         return strkey
 
     def getMd532(info):
-        md = hashlib.md5()
-        md.update(info)
-        hashkey = md.hexdigest()
+        hashkey = hashlib.md5(info.encode('utf8')).hexdigest()
         return '%s-%s-%s-%s-%s' % (hashkey[:8], hashkey[8:12], hashkey[12:16], hashkey[16:20], hashkey[20:])
 
     def filterItemFunc(itemGroup, key, xkey, item):

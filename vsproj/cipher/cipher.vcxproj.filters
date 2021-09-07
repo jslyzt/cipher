@@ -2,10 +2,16 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <ItemGroup>
     <ClCompile Include="..\..\src\cipher\aes.c" />
-    <ClCompile Include="..\..\src\cipher\aes\aes.cpp" />
+    <ClCompile Include="..\..\src\cipher\aes\aes.cpp">
+      <Filter>aes</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\cipher\chacha20.cpp" />
-    <ClCompile Include="..\..\src\cipher\ctaes\bench.c" />
-    <ClCompile Include="..\..\src\cipher\ctaes\ctaes.c" />
+    <ClCompile Include="..\..\src\cipher\ctaes\bench.c">
+      <Filter>ctaes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cipher\ctaes\ctaes.c">
+      <Filter>ctaes</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\cipher\digest.c" />
     <ClCompile Include="..\..\src\cipher\hmac.c" />
     <ClCompile Include="..\..\src\cipher\md5.c" />
@@ -23,4 +29,12 @@
     <ClCompile Include="..\..\src\util\base64.cpp" />
     <ClCompile Include="..\..\src\util\stringutils.cpp" />
   </ItemGroup>
-</Project>
+  <ItemGroup>
+    <Filter Include="aes">
+      <UniqueIdentifier>{6d3c5993-ca01-7d0f-f169-b425d3193f02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ctaes">
+      <UniqueIdentifier>{185e1c27-2121-9db6-55e7-70e46050cdeb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  </Project>

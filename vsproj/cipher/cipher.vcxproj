@@ -38,7 +38,7 @@
     <DataFilesToCopyRemotely Include="@(ClInclude)" />
     <DataFilesToCopyRemotely Include="@(ClInclude)" />
     <DataFilesToCopyRemotely Include="@(ClInclude)" />
-  </ItemGroup>
+  <DataFilesToCopyRemotely Include="@(ClInclude)" /></ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{6CD97FEB-2184-4A29-B5FA-6BA76F7051B4}</ProjectGuid>
